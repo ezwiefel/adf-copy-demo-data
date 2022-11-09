@@ -1,0 +1,17 @@
+{
+	"name": "Dest_Chexpert",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "adls_demodata_eastus",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "chexpert"
+			}
+		}
+	}
+}
