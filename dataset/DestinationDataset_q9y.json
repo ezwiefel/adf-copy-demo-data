@@ -1,0 +1,17 @@
+{
+	"name": "DestinationDataset_q9y",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "adls_demodata_eastus",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "ameshousing"
+			}
+		}
+	}
+}
