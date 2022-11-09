@@ -1,0 +1,12 @@
+{
+	"name": "publicmldataeastus",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": "DefaultEndpointsProtocol=https;AccountName=publicmldataeastus;",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDAzMUE1RDUwLUE2MTktNEU1Qi05M0EwLUYyODMwRDI5MzkzOF9iMjFiOGEzOS0zN2UwLTRlN2QtOTYwOC0xNWE1YjIzYWRjMWUiDQp9"
+		}
+	}
+}
