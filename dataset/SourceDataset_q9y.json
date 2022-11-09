@@ -1,0 +1,17 @@
+{
+	"name": "SourceDataset_q9y",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "publicmldataeastus",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "ameshousing"
+			}
+		}
+	}
+}
