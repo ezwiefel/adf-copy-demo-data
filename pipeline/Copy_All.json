@@ -3,69 +3,6 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_All",
-				"type": "Copy",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [
-					{
-						"name": "Source",
-						"value": "ameshousing//"
-					},
-					{
-						"name": "Destination",
-						"value": "ameshousing//"
-					}
-				],
-				"typeProperties": {
-					"source": {
-						"type": "BinarySource",
-						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
-							"wildcardFileName": "*",
-							"deleteFilesAfterCompletion": false
-						},
-						"formatSettings": {
-							"type": "BinaryReadSettings"
-						}
-					},
-					"sink": {
-						"type": "BinarySink",
-						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings",
-							"copyBehavior": "PreserveHierarchy"
-						}
-					},
-					"enableStaging": false,
-					"parallelCopies": 64,
-					"enableSkipIncompatibleRow": false,
-					"skipErrorFile": {
-						"fileMissing": true
-					},
-					"validateDataConsistency": false,
-					"dataIntegrationUnits": 64
-				},
-				"inputs": [
-					{
-						"referenceName": "Source_All_EastUS",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "DestinationDataset_q9y",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
 				"name": "EastUSContainers",
 				"type": "SetVariable",
 				"dependsOn": [],
@@ -74,6 +11,86 @@
 					"variableName": "container_list",
 					"value": [
 						"ameshousing\nchexpert\nfood101\nlendingclub\ntrash-objects-in-context"
+					]
+				}
+			},
+			{
+				"name": "MoveContainer",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "EastUSContainers",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@variables('container_list')",
+						"type": "Expression"
+					},
+					"batchCount": 3,
+					"activities": [
+						{
+							"name": "Copy_Container",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "BinarySource",
+									"storeSettings": {
+										"type": "AzureBlobStorageReadSettings",
+										"recursive": true
+									},
+									"formatSettings": {
+										"type": "BinaryReadSettings"
+									}
+								},
+								"sink": {
+									"type": "BinarySink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									}
+								},
+								"enableStaging": false,
+								"parallelCopies": 64,
+								"dataIntegrationUnits": 64
+							},
+							"inputs": [
+								{
+									"referenceName": "Source_All_EastUS",
+									"type": "DatasetReference",
+									"parameters": {
+										"container_name": {
+											"value": "@item()",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "Dest_ADLS_All_Eastus",
+									"type": "DatasetReference",
+									"parameters": {
+										"container_name": {
+											"value": "@item()",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						}
 					]
 				}
 			}
