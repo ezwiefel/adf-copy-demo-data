@@ -5,11 +5,20 @@
 			"referenceName": "publicmldataeastus",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"container_name": {
+				"type": "String"
+			}
+		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation"
+				"type": "AzureBlobStorageLocation",
+				"container": {
+					"value": "@dataset().container_name",
+					"type": "Expression"
+				}
 			}
 		}
 	}
