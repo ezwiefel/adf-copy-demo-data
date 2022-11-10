@@ -10,11 +10,7 @@
 				"typeProperties": {
 					"variableName": "container_list",
 					"value": [
-						"ameshousing",
-						"chexpert",
-						"food101",
-						"lendingclub",
-						"trash-objects-in-context"
+						"chexpert"
 					]
 				}
 			},
