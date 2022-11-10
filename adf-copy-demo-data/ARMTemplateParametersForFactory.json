@@ -4,15 +4,6 @@
 	"parameters": {
 		"factoryName": {
 			"value": "adf-copy-demo-data"
-		},
-		"adls_demodata_eastus_accountKey": {
-			"value": ""
-		},
-		"publicmldataeastus_connectionString": {
-			"value": ""
-		},
-		"adls_demodata_eastus_properties_typeProperties_url": {
-			"value": "https://demodataeastus.dfs.core.windows.net/"
 		}
 	}
 }
