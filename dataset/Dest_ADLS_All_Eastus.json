@@ -1,0 +1,25 @@
+{
+	"name": "Dest_ADLS_All_Eastus",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "adls_demodata_eastus",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"container_name": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": {
+					"value": "@dataset().container_name",
+					"type": "Expression"
+				}
+			}
+		}
+	}
+}
