@@ -342,7 +342,8 @@
 								"referenceName": "URLs",
 								"type": "DatasetReference",
 								"parameters": {}
-							}
+							},
+							"firstRowOnly": false
 						}
 					},
 					{
@@ -359,7 +360,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"items": {
-								"value": "@activity('Get_Urls').output",
+								"value": "@activity('Get_Urls').output.value",
 								"type": "Expression"
 							},
 							"batchCount": 50,
@@ -402,7 +403,7 @@
 											"type": "DatasetReference",
 											"parameters": {
 												"base_url": {
-													"value": "@item()",
+													"value": "@item()['URLs']",
 													"type": "Expression"
 												}
 											}
