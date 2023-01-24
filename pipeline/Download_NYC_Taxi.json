@@ -90,7 +90,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"base_url": {
-											"value": "@item()",
+											"value": "@item()['URLs']",
 											"type": "Expression"
 										}
 									}
