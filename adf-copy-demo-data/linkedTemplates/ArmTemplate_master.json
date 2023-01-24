@@ -15,6 +15,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'publicmldataeastus'"
 		},
+		"Download URL_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "@{linkedService().url}"
+		},
 		"adls_demodata_eastus_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://demodataeastus.dfs.core.windows.net/"
@@ -51,6 +55,9 @@
 					},
 					"publicmldataeastus_connectionString": {
 						"value": "[parameters('publicmldataeastus_connectionString')]"
+					},
+					"Download URL_properties_typeProperties_url": {
+						"value": "[parameters('Download URL_properties_typeProperties_url')]"
 					},
 					"adls_demodata_eastus_properties_typeProperties_url": {
 						"value": "[parameters('adls_demodata_eastus_properties_typeProperties_url')]"

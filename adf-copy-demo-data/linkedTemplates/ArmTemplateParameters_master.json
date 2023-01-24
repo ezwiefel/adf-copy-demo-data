@@ -11,6 +11,9 @@
 		"publicmldataeastus_connectionString": {
 			"value": ""
 		},
+		"Download URL_properties_typeProperties_url": {
+			"value": "@{linkedService().url}"
+		},
 		"adls_demodata_eastus_properties_typeProperties_url": {
 			"value": "https://demodataeastus.dfs.core.windows.net/"
 		},
