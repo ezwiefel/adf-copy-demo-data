@@ -49,7 +49,7 @@
 						"value": "@activity('Get_Urls').output",
 						"type": "Expression"
 					},
-					"batchCount": 256,
+					"batchCount": 50,
 					"activities": [
 						{
 							"name": "Download URL",
