@@ -1,0 +1,28 @@
+{
+	"name": "URLs",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "adls_demodata_eastus",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "tlc_data_urls.csv",
+				"fileSystem": "lookups"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "URLs",
+				"type": "String"
+			}
+		]
+	}
+}
