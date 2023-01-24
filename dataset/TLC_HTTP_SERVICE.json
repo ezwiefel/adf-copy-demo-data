@@ -1,0 +1,28 @@
+{
+	"name": "TLC_HTTP_SERVICE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Download URL",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"url": {
+					"value": "@dataset().base_url",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"base_url": {
+				"type": "String",
+				"defaultValue": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhv_tripdata_2018-03.parquet"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			}
+		}
+	}
+}
