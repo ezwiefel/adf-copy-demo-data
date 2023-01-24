@@ -29,7 +29,8 @@
 					"dataset": {
 						"referenceName": "URLs",
 						"type": "DatasetReference"
-					}
+					},
+					"firstRowOnly": false
 				}
 			},
 			{
