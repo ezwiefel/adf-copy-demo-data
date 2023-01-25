@@ -651,7 +651,7 @@
 								"value": "@activity('Get_Urls').output.value",
 								"type": "Expression"
 							},
-							"batchCount": 10,
+							"batchCount": 2,
 							"activities": [
 								{
 									"name": "Download URL",
@@ -683,7 +683,7 @@
 											}
 										},
 										"enableStaging": false,
-										"parallelCopies": 32
+										"parallelCopies": 2
 									},
 									"inputs": [
 										{
